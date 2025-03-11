@@ -1,0 +1,82 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #181818;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #222;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+}
+
+.inputbox {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.searchButton {
+    padding: 8px 12px;
+    border: none;
+    background-color: #e50914;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.movies h2 {
+    text-align: center;
+}
+
+/* Movie Grid */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.movie-grid .movie-card {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222;
+}
+
+.movie-poster {
+    width: 180px; 
+    height: 270px;
+    object-fit: cover; 
+    border-radius: 5px;
+}
