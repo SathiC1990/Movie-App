@@ -96,3 +96,66 @@ const movies = [
     });
   };
   
+  
+  // Function to search for movies by title keyword
+function searchMovies(event) {
+  event.preventDefault(); // Prevent form from reloading the page
+
+  const searchInput = document.querySelector('.inputbox').value.trim(); // Get the search input
+  const movieContainer = document.getElementById('movie-container');
+
+  // Clear previous results
+  movieContainer.innerHTML = '';
+
+  // Filter movies based on search input
+  const searchResults = movies.filter(movie =>
+    movie.title.toLowerCase().includes(searchInput.toLowerCase())
+  );
+
+  // Display results
+  if (searchResults.length > 0) {
+    searchResults.forEach(movie => displayMovieCard(movie));
+  } else {
+    movieContainer.innerHTML = '<p>No movies found.</p>';
+  }
+}
+
+// Attach event listener to the form
+document.querySelector('.search-form').addEventListener('submit', searchMovies);
+/*
+// Function to sort movies by selected property and order
+function sortMoviesByProperty(property, order = 'asc') {
+  movies.sort((a, b) => {
+      let valueA = a[property];
+      let valueB = b[property];
+
+      // Convert prices to numbers if sorting by price
+      if (property === "price") {
+          valueA = parseFloat(valueA);
+          valueB = parseFloat(valueB);
+      }
+
+      if (typeof valueA === "number" && typeof valueB === "number") {
+          return order === "asc" ? valueA - valueB : valueB - valueA;
+      }
+
+      if (typeof valueA === "string" && typeof valueB === "string") {
+          return order === "asc" ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
+      }
+
+      return 0;
+  });
+
+  // Refresh the displayed movies after sorting
+  document.getElementById("movie-container").innerHTML = "";
+  movies.forEach(movie => displayMovieCard(movie));
+}
+
+// Event listener for sorting
+document.getElementById("sortButton").addEventListener("click", () => {
+  const selectedProperty = document.getElementById("sortProperty").value;
+  const selectedOrder = document.getElementById("sortOrder").value;
+
+  sortMoviesByProperty(selectedProperty, selectedOrder);
+});*/
+

@@ -80,3 +80,54 @@ body {
     object-fit: cover; 
     border-radius: 5px;
 }
+
+/* Sorting Controls */
+.sorting-movies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #222;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.sorting-movies label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.sorting-movies select, .sorting-controls button {
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sorting-movies select {
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sorting-movies select:focus {
+    outline: none;
+    border: 2px solid #ff9800;
+}
+
+.sorting-movies button {
+    background: #ff9800;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sorting-movies button:hover {
+    background: #e68900;
+    transform: scale(1.05);
+}
