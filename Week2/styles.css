@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #181818;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #222;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+}
+
+.inputbox {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.searchButton {
+    padding: 8px 12px;
+    border: none;
+    background-color: #e50914;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.movies h2 {
+    text-align: center;
+}
+
+/* Movie Grid */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.movie-grid .movie-card {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222;
+}
+
+.movie-poster {
+    width: 180px; 
+    height: 270px;
+    object-fit: cover; 
+    border-radius: 5px;
+}
+
+/* Sorting Controls */
+.sorting-movies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #222;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.sorting-movies label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.sorting-movies select, .sorting-controls button {
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sorting-movies select {
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sorting-movies select:focus {
+    outline: none;
+    border: 2px solid #ff9800;
+}
+
+.sorting-movies button {
+    background: #ff9800;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sorting-movies button:hover {
+    background: #e68900;
+    transform: scale(1.05);
+}
