@@ -52,23 +52,23 @@ const movies = [
         <div id="comments-display-${movie.id}"></div>
       </div>
   
-      <!-- Add rating section -->
-      <div class="rating-section">
-        <label for="rating">Rate this Movie: </label>
-        <div id="rating-stars-${movie.id}">
-          <span class="star" onclick="rateMovie(${movie.id}, 1)">&#9733;</span>
-          <span class="star" onclick="rateMovie(${movie.id}, 2)">&#9733;</span>
-          <span class="star" onclick="rateMovie(${movie.id}, 3)">&#9733;</span>
-          <span class="star" onclick="rateMovie(${movie.id}, 4)">&#9733;</span>
-          <span class="star" onclick="rateMovie(${movie.id}, 5)">&#9733;</span>
-        </div>
-        <div id="rating-display-${movie.id}"></div>
-      </div>
+      <!-- Add rating section -->     
+<div class="rating-section">
+  <label for="rating">Rate this Movie: </label>
+  <div id="rating-stars-${movie.id}">
+    <span class="star" onclick="rateMovie(${movie.id}, 1)">&#9733;</span>
+    <span class="star" onclick="rateMovie(${movie.id}, 2)">&#9733;</span>
+    <span class="star" onclick="rateMovie(${movie.id}, 3)">&#9733;</span>
+    <span class="star" onclick="rateMovie(${movie.id}, 4)">&#9733;</span>
+    <span class="star" onclick="rateMovie(${movie.id}, 5)">&#9733;</span>
+  </div>
+  <div id="rating-display-${movie.id}"></div>
+</div>
+
     `;
-  
-    movieContainer.appendChild(movieCard);
+movieContainer.appendChild(movieCard);
   }
-  
+
   // Function to add a comment
   function addComment(movieId) {
     const commentInput = document.getElementById(`comment-input-${movieId}`);
@@ -83,11 +83,25 @@ const movies = [
     }
   }
   
-  // Function to handle movie rating
-  function rateMovie(movieId, starRating) {
-    const ratingDisplay = document.getElementById(`rating-display-${movieId}`);
-    ratingDisplay.textContent = `You rated this movie ${starRating} stars.`;
-  }
+let selectedRatings = {};
+
+// Function to handle movie rating
+function rateMovie(movieId, starRating) {
+    selectedRatings[movieId] = starRating; // Store selected rating
+    updateStars(movieId, starRating); // Update UI to highlight stars
+    document.getElementById(`rating-display-${movieId}`).textContent = `You rated this movie ${starRating} stars.`;
+}
+
+// Function to update star highlighting
+function updateStars(movieId, starRating) {
+    const stars = document.querySelectorAll(`#rating-stars-${movieId} .star`);
+    stars.forEach((star, index) => {
+        // Highlight stars up to the selected rating
+        star.classList.toggle("active", index < starRating);
+    });
+}
+ 
+   
   
   // Display all the movie cards on page load
   window.onload = function() {
@@ -101,7 +115,7 @@ const movies = [
 function searchMovies(event) {
   event.preventDefault(); // Prevent form from reloading the page
 
-  const searchInput = document.querySelector('.inputbox').value.trim(); // Get the search input
+  const searchInput = document.querySelector('.inputbox').value.trim(); 
   const movieContainer = document.getElementById('movie-container');
 
   // Clear previous results
