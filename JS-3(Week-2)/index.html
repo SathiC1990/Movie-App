@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Guide App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">🎬 Movie Guide App</div>
+            <form class="search-form">
+                <input type="text" placeholder="Search Movie..." class="inputbox">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </nav>
+    </header>
+    
+    <!-- Main Section -->
+    <main>
+        <section class="movie-section">
+            <h2>Movie Details</h2>
+            <div class="sorting-movies">
+                <label for="sortProperty">Sort By:</label> 
+                <select id = "sortProperty">
+                    <option value = "title">Title</option>
+                    <option value="movie_year">Year</option>
+                    <option value ="price">Price</option>
+                </select>
+                <label for = "sortOrder">Order:</label>
+                <select id ="sortOrder">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+                <button id ="sortButton">Sort</button>
+            </div>
+            <!--Filtering Movie By Year-->
+            <div class ="filtering-movies">
+                <label for ="filteringYear">Filter By Year</label>
+                <input type ="number" id="filterYear" placeholder="Enter year (e.g., 2010)">
+                <button id="filterButton">Filter</button>
+            </div>
+
+            <div class="timers-container">
+                <!-- Timer to pick a movie -->
+                <div class="timer-section">
+                    <h3>Set Timer to Pick a Movie</h3>
+                    <label for="movie-time">Time (seconds):</label>
+                    <input type="number" id="movie-time" min="1" value="30">
+                    <button onclick="startMovieTimer()">Start Timer</button>
+                    <p>Time Left: <span id="movie-timer-display">30</span> sec</p>
+                </div>
+            
+                <!-- Timer for time spent on page -->
+                <div class="page-timer">
+                    <h3>Time Spent on Page</h3>
+                    <p>Elapsed Time: <span id="elapsed-time">0</span> sec</p>
+                </div>
+            </div>
+            <div id="movie-container" class="movie-container"></div> 
+  </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Movie Guide App</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
