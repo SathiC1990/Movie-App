@@ -32,7 +32,7 @@ body {
     border-radius: 5px;
 }
 
-.searchButton {
+.search-button {
     padding: 8px 12px;
     border: none;
     background-color: #e50914;
@@ -41,6 +41,14 @@ body {
     border-radius: 5px;
 }
 
+#movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusts based on screen size */
+    gap: 20px; /* Space between the cards */
+    padding: 20px;
+    justify-items: center; /* Center the cards horizontally */
+  }
+  
 /* Main Content */
 .container {
     width: 90%;
@@ -80,3 +88,69 @@ body {
     object-fit: cover; 
     border-radius: 5px;
 }
+
+/* Sorting Controls */
+.sorting-movies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #222;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.sorting-movies label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.sorting-movies select, .sorting-controls button {
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sorting-movies select {
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sorting-movies select:focus {
+    outline: none;
+    border: 2px solid #ff9800;
+}
+
+.sorting-movies button {
+    background: #ff9800;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sorting-movies button:hover {
+    background: #e68900;
+    transform: scale(1.05);
+}
+
+
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: gray; /* Default star color */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .star.active {
+    color: gold; /* Highlighted star color */
+  }
+  
+  
